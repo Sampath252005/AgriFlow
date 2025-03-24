@@ -10,7 +10,6 @@ const NavBar = () => {
     <li className='hover:bg-slate-600 p-5 rounded-2xl'>Weather</li>
     <li className='hover:bg-slate-600 p-5 rounded-2xl'>Soil</li>
     <li className='hover:bg-slate-600 p-5 rounded-2xl'>Water</li>
-    <li className='hover:bg-slate-600 p-5 rounded-2xl'>Samath</li>
   </ul>
 </nav>
 
