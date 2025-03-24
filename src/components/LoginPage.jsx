@@ -1,13 +1,15 @@
 import React from "react";
+import loginimage from '../images/loginpageImage.jpg'
 
 const LoginPage = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900 ">
-      <div className="min-w-[600px] min-h-[400px] max-w-md bg-gray-800 text-white p-8 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
+    <div className="flex items-center justify-center  bg-gray-400 h-[100vh] w-[100vw] absolute inset-0 bg-cover bg-center " style={{ backgroundImage: `url(${loginimage})` }}>
+      
+       <div className="min-w-[600px] min-h-[400px] max-w-md  text-white p-8 rounded-lg shadow-lg z-50  ">
+        <h2 className="text-5xl text-center text-gray-500 mb-6 font-extrabold">Login</h2>
         <form action="#" method="POST">
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium">
+            <label htmlFor="email" className="block font-bold text-gray-700 text-[20px]">
               Email
             </label>
             <input
@@ -15,12 +17,12 @@ const LoginPage = () => {
               id="email"
               name="email"
               placeholder="Enter your email"
-              className="mt-1 w-full p-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 w-full p-2 rounded-lg text-black bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
           <div className="mb-4">
-            <label htmlFor="password" className="block text-sm font-medium">
+            <label htmlFor="password" className="block  font-bold text-gray-700 text-[20px]">
               Password
             </label>
             <input
@@ -28,7 +30,7 @@ const LoginPage = () => {
               id="password"
               name="password"
               placeholder="Enter your password"
-              className="mt-1 w-full p-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 w-full p-2 rounded-lg text-black bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -42,11 +44,12 @@ const LoginPage = () => {
 
         <p className="mt-4 text-center text-sm">
           Don't have an account?{" "}
-          <a href="#" className="text-blue-400 hover:underline">
+          <a href="#" className="text-blue-400 hover:underline font-extrabold text-[20px]">
             Sign Up
           </a>
         </p>
       </div>
+      
     </div>
   );
 };
