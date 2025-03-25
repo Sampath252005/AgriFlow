@@ -13,7 +13,7 @@ const Menu = ({ show, onClose }) => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 w-64 md:w-80 h-full bg-gray-800 shadow-lg text-white p-4 z-50 transform ${
+        className={`fixed top-0 left-0 w-64 md:w-80 h-full bg-gray-800 shadow-lg text-white p-4 z-50 transform ${
           show ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300`}
       >

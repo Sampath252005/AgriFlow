@@ -8,7 +8,6 @@ const NavBar = () => {
   return (
     <>
       <nav className="flex justify-between px-3.5 bg-white min-h-[50px] items-center">
-        <h1 className="font-bold text-[15px] md:text-[20px]">App Name</h1>
         <button
           className="p-2 rounded-md hover:scale-110 transition-transform"
           onClick={() => setShowSetting(!showSetting)}
