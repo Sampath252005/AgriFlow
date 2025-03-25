@@ -7,9 +7,9 @@ function App() {
 
   return (
     <>
-      <LoginPage/>
+      {/* <LoginPage/> */}
       {/* <SignUp/> */}
-      {/* <Home/> */}
+      <Home/>
     </>
   )
 }
