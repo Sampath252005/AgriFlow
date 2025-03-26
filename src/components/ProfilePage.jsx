@@ -6,7 +6,7 @@ const ProfilePage = ({ showProfile, onCloseProfile }) => {
     <>
       {showProfile && (
         <div
-          className="fixed inset-0 bg-opacity-50 z-40"
+          className="fixed inset-0 bg-black opacity-50 z-40"
           onClick={onCloseProfile}
         ></div>
       )}

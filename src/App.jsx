@@ -17,8 +17,8 @@ function App() {
 
         {/* Main Content (Moves when menu opens) */}
         <div
-          className={`flex-grow p-4 transition-all duration-300 ${
-            menuOpen ? "ml-64" : "ml-0"
+          className={`flex-grow p-4 transition-all duration-300  ${
+            menuOpen ? "ml-10 md:ml-80" : "ml-0"
           }`}
         >
           <Routes>

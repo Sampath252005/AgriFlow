@@ -1,53 +1,89 @@
 import React from "react";
+import WeatherChart from "./Charts/weatherChart";
+import MoistureChart from "./Charts/MoistureChart";
+import SoilCompositionChart from "./Charts/SoilCompositionChart";
+import RainfallChart from "./Charts/RainfallChart";
+import SoilHealthChart from "./Charts/SoilHealthChart";
 
-const dashBoard_Page = () => {
+const data = [
+  { title: "Weather", temperature: "50°C", humidity: "60%", rainfall: "30mm" },
+  { title: "Soil", moisture: "40%", ph: "6.5", nitrogen: "High" },
+  { title: "Water Quality", ph: "7.2", turbidity: "Moderate", tds: "500 ppm" },
+];
+
+const dashBoard_Page=()=> {
   return (
-    <div className="flex flex-col space-y-10 text-white">
-      <h1 className="text-5xl font-serif font-extrabold text-green-600">DashBoard</h1>
-      <div className="grid grid-cols-2 gap-15 ">
-        <div className="flex flex-col  bg-green-500 p-5 rounded-2xl space-y-2">
-          <h1 className="text-4xl font-bold">Weather</h1>
-          <div className="flex flex-col space-y-5 ">
-            <span className="flex w-full min-w-[20px] text-5xl bg-green-400 rounded-2xl p-4 items-center justify-center">50&#xB0;c</span>
-            <div className="grid grid-cols-2 gap-3">
-            <span className=" bg-green-400 rounded-2xl p-4 items-center justify-center">Humidity</span>
-            <span className=" bg-green-400 rounded-2xl p-4 items-center justify-center">RainFall</span>
-            </div>
+    <>
+    <div className="p-6">
+      <h1 className="text-4xl font-bold text-green-700 mb-6">DashBoard</h1>
+
+      {/* Grid Layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        {data.map((item, index) => (
+          <div
+            key={index}
+            className="bg-green-400 text-white p-6 rounded-2xl shadow-lg border border-gray-300"
+          >
+            <h2 className="text-xl font-bold mb-2">{item.title}</h2>
+
+            {/* Weather Info */}
+            {item.title === "Weather" && (
+              <>
+                <div className="text-3xl font-bold">{item.temperature}</div>
+                <div className="flex mt-4">
+                  <div className="bg-green-500 p-2 rounded-lg flex-1 mr-2 text-center">
+                    Humidity: {item.humidity}
+                  </div>
+                  <div className="bg-green-500 p-2 rounded-lg flex-1 text-center">
+                    Rainfall: {item.rainfall}
+                  </div>
+                </div>
+              </>
+            )}
+
+            {/* Soil Info */}
+            {item.title === "Soil" && (
+              <>
+               <div className="text-3xl font-bold">{item.moisture}</div>
+                <div className="flex mt-4">
+                  <div className="bg-green-500 p-2 rounded-lg flex-1 mr-2 text-center">
+                    ph: {item.ph}
+                  </div>
+                  <div className="bg-green-500 p-2 rounded-lg flex-1 text-center">
+                    Nitrogen: {item.nitrogen}
+                  </div>
+                </div>
+               </>
+            )}
+
+            {/* Water Quality Info */}
+            {item.title === "Water Quality" && (
+              <>
+                <div className="text-3xl font-bold">{item.ph}</div>
+                <div className="flex mt-4">
+                  <div className="bg-green-500 p-2 rounded-lg flex-1 mr-2 text-center">
+                    Humidity: {item.turbidity}
+                  </div>
+                  <div className="bg-green-500 p-2 rounded-lg flex-1 text-center">
+                    Rainfall: {item.tds}
+                  </div>
+                </div>
+              </>
+            )}
           </div>
-        </div>
-        <div className="flex flex-col  bg-green-500 p-5 rounded-2xl space-y-2">
-          <h1 className="text-4xl font-bold">Weather</h1>
-          <div className="flex flex-col space-y-2 ">
-            <span className="flex w-full min-w-[20px] text-5xl bg-green-400 rounded-2xl p-4 items-center justify-center">50&#xB0;c</span>
-            <div className="grid grid-cols-2 gap-3">
-            <span className=" bg-green-400 rounded-2xl p-4 items-center justify-center">Humidity</span>
-            <span className=" bg-green-400 rounded-2xl p-4 items-center justify-center">RainFall</span>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col  bg-green-500 p-5 rounded-2xl space-y-2">
-          <h1 className="text-4xl font-bold">Weather</h1>
-          <div className="flex flex-col space-y-2 ">
-            <span className="flex w-full min-w-[20px] text-5xl bg-green-400 rounded-2xl p-4 items-center justify-center">50&#xB0;c</span>
-            <div className="grid grid-cols-2 gap-3">
-            <span className=" bg-green-400 rounded-2xl p-4 items-center justify-center">Humidity</span>
-            <span className=" bg-green-400 rounded-2xl p-4 items-center justify-center">RainFall</span>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col  bg-green-500 p-5 rounded-2xl space-y-2">
-          <h1 className="text-4xl font-bold">Weather</h1>
-          <div className="flex flex-col space-y-2 ">
-            <span className="flex w-full min-w-[20px] text-5xl bg-green-400 rounded-2xl p-4 items-center justify-center">50&#xB0;c</span>
-            <div className="grid grid-cols-2 gap-3">
-            <span className=" bg-green-400 rounded-2xl p-4 items-center justify-center">Humidity</span>
-            <span className=" bg-green-400 rounded-2xl p-4 items-center justify-center">RainFall</span>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
+    <div className="grid grid-cols-2 gap-4">
+      <WeatherChart/>
+      <MoistureChart/>
+      <SoilCompositionChart/>
+      <RainfallChart/>
+      <SoilHealthChart/>
+
+    </div>
+    </>
   );
-};
+}
 
 export default dashBoard_Page;
