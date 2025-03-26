@@ -1,15 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Menu = ({ show, onClose }) => {
   return (
     <>
       {/* Overlay */}
       {show && (
-        <div
-          className="fixed inset-0 bg-opacity-50 z-40"
-          onClick={onClose}
-        ></div>
+        <div className="fixed inset-0 bg-black opacity-50 z-40" onClick={onClose}></div>
       )}
 
       {/* Sidebar */}
@@ -18,26 +15,31 @@ const Menu = ({ show, onClose }) => {
           show ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300`}
       >
-        {/* Header */}
-        <div className="flex-col space-y-5 ">
+        {/* Close Button */}
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-extrabold">Menu</h2>
+          <h2 className="text-2xl font-bold">Menu</h2>
           <button
-            className="bg-gray-700 text-white rounded-md px-4 py-2 font-bold hover:bg-slate-500"
+            className="bg-gray-700 text-white rounded-md px-4 py-2 hover:bg-gray-600"
             onClick={onClose}
           >
             Close
           </button>
-          </div>
-          <div className="flex-col space-y-5 font-bold">
-          <p className="bg-slate-600 rounded-2xl p-2 hover:bg-slate-700">Weather</p>
-          <p className="bg-slate-600 rounded-2xl p-2 hover:bg-slate-700">Water</p>
-          <p className="bg-slate-600 rounded-2xl p-2 hover:bg-slate-700">Soil</p>
-          <p className="bg-slate-600 rounded-2xl p-2 hover:bg-slate-700">Weather</p>
-          <p className="bg-slate-600 rounded-2xl p-2 hover:bg-slate-700">Weather</p>
-          <p className="bg-slate-600 rounded-2xl p-2 hover:bg-slate-700">Weather</p>
-          <p className="bg-slate-600 rounded-2xl p-2 hover:bg-slate-700">Weather</p> 
-          </div>
+        </div>
+
+        {/* Navigation Links */}
+        <div className="flex flex-col space-y-5 font-bold mt-5">
+          <Link to="/" className="bg-gray-700 rounded-md p-2 hover:bg-gray-600">
+            Home
+          </Link>
+          <Link to="/dashboard" className="bg-gray-700 rounded-md p-2 hover:bg-gray-600">
+            Dashboard
+          </Link>
+          <Link to="/irrigation-planner" className="bg-gray-700 rounded-md p-2 hover:bg-gray-600">
+            Irrigation Planner
+          </Link>
+          <Link to="/report" className="bg-gray-700 rounded-md p-2 hover:bg-gray-600">
+            Report
+          </Link>
         </div>
       </div>
     </>
