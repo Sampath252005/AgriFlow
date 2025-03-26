@@ -15,39 +15,44 @@ const ProfilePage = ({ showProfile, onCloseProfile }) => {
           showProfile ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300`}
       >
-        <div className="flex-col space-y-10 justify-center items-center">
+        <div className="flex-col space-y-20 justify-between items-center">
           <div className="flex justify-center align-middle">
             <img src={malelogo} alt="user photo" className="size-40" />
           </div>
           <div className="flex-col justify-center items-center space-y-[50px]">
             <div>
-            <label className="block">Full Name</label>
-            <input
-              type="text"
-              name="name"
-              placeholder="Enter your full name"
-              className="input-class"
-            />
+              <label className="block text-2xl font-extrabold">Full Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your full name"
+                className="input-class w-full min-h-[50px] font-bold"
+              />
             </div>
             <div>
-            <label className="block">Phone Number</label>
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Enter your contact number"
-              className="input-class"
-            />
+              <label className="block text-2xl font-extrabold">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Enter your contact number"
+                className="input-class w-full min-h-[50px] font-bold"
+              />
             </div>
             <div>
-            <label className="block">Location</label>
-            <input
-              type="text"
-              name="location"
-              placeholder="Enter your village/district"
-              className="input-class"
-            />
+              <label className="block text-2xl font-extrabold">Location</label>
+              <input
+                type="text"
+                name="location"
+                placeholder="Enter your village/district"
+                className="input-class w-full min-h-[50px] font-bold"
+              />
             </div>
           </div>
+          <button className="absolute bottom-4 right-4 bg-red-700 cursor-pointer text-white px-4 py-2 cur rounded-lg shadow-md hover:bg-red-500">
+            Log Out
+          </button>
         </div>
       </div>
     </>
