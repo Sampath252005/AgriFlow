@@ -9,7 +9,7 @@ import NavBar from "./components/NavBar";
 import SignUp from "./components/SignUp"
 import LoginPage from "./components/LoginPage"
 import WeatherPage from "./components/WeatherPage"
-import Loading from './images/loading.gif';
+
 
 const API_KEY = "4cefbccbd0be41f297f41318251402";
 function App() {
@@ -54,7 +54,7 @@ function App() {
           <Route path="/SignUP" element={<SignUp />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/Weather"  element={<WeatherPage setCity={setCity} weatherData={weatherData}/>} />
+          <Route path="/Weather"  element={<WeatherPage setCity={setCity} weatherData={weatherData} loading={loading} />} />
           <Route path="/irrigation-planner" element={<IrrigationPlanner />} />
           <Route path="/report" element={<ReportPage />} />
         </Routes>
