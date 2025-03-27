@@ -90,7 +90,7 @@ const LoginPage = () => {
         <p className="mt-4 text-center text-gray-700 text-sm">
           Don't have an account?{" "}
           <button
-            className="text-blue-500 hover:underline font-bold"
+            className="text-blue-500 hover:underline font-bold cursor-pointer"
             onClick={() => navigate("/SignUp")}
           >
             Sign Up

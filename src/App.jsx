@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar";
 import SignUp from "./components/SignUp"
 import LoginPage from "./components/LoginPage"
 import WeatherPage from "./components/WeatherPage"
+import PlantPredictor from "./components/PlantPredictor";
 
 
 const API_KEY = "4cefbccbd0be41f297f41318251402";
@@ -56,6 +57,7 @@ function App() {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/Weather"  element={<WeatherPage setCity={setCity} weatherData={weatherData} loading={loading} />} />
           <Route path="/irrigation-planner" element={<IrrigationPlanner />} />
+          <Route path="/PlantPredictor" element={<PlantPredictor/>}/>
           <Route path="/report" element={<ReportPage />} />
         </Routes>
       </div>

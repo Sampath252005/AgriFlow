@@ -8,7 +8,7 @@ import SoilHealthChart from "./Charts/SoilHealthChart";
 const data = [
   { title: "Weather", temperature: "50°C", humidity: "60%", rainfall: "30mm" },
   { title: "Soil", moisture: "40%", ph: "6.5", nitrogen: "High" },
-  { title: "Water Quality", ph: "7.2", turbidity: "Moderate", tds: "500 ppm" },
+  { title: "Air Quality", ph: "7.2", turbidity: "Moderate", tds: "500 ppm" },
 ];
 
 const dashBoard_Page=()=> {
@@ -57,7 +57,7 @@ const dashBoard_Page=()=> {
             )}
 
             {/* Water Quality Info */}
-            {item.title === "Water Quality" && (
+            {item.title === "Air Quality" && (
               <>
                 <div className="text-3xl font-bold">{item.ph}</div>
                 <div className="flex mt-4">
