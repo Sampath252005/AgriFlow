@@ -5,12 +5,42 @@ import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Perform login logic here...
-    navigate("/Home");
+  
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+  
+    if (!email || !password) {
+      alert("Please fill in both email and password.");
+      return;
+    }
+  
+    try {
+      const response = await fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({ email, password })
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Login failed");
+      }
+      
+      const data = await response.json();
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("userId", data.userId);
+      navigate("/Home");
+    } catch (error) {
+      console.error("Login Error:", error);
+      alert(error.message || "Login failed. Please try again.");
+    }
   };
-
+  
   return (
     <div
       className="flex items-center justify-center bg-gray-400 min-h-screen w-full absolute inset-0 bg-cover bg-center px-4"
