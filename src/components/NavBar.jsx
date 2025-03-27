@@ -9,7 +9,7 @@ const NavBar = ({ menuOpen, setMenuOpen }) => {
 
   return (
     <>
-      <nav className="flex justify-between px-3.5 bg-white min-h-[50px] items-center">
+      <nav className="flex justify-between px-3.5 bg-white min-h-[50px] items-center mb-3 ">
         {/* Menu Button */}
         <button
           className="p-2 rounded-md hover:scale-110 transition-transform"

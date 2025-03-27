@@ -7,6 +7,8 @@ import ReportPage from "./components/reportPage";
 import NavBar from "./components/NavBar";
 import SignUp from "./components/SignUp"
 import LoginPage from "./components/LoginPage"
+import WeatherPage from "./components/WeatherPage"
+
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,6 +32,7 @@ function App() {
           <Route path="/SignUP" element={<SignUp />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/Weather" element={<WeatherPage/>} />
           <Route path="/irrigation-planner" element={<IrrigationPlanner />} />
           <Route path="/report" element={<ReportPage />} />
         </Routes>
