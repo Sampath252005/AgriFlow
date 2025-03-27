@@ -22,7 +22,7 @@ const Menu = ({ show, onClose }) => {
 
         {/* Navigation Links */}
         <div className="flex flex-col space-y-10 font-bold mt-5">
-          <Link to="/" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
+          <Link to="/Home" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
             Home
           </Link>
           <Link to="/dashboard" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
