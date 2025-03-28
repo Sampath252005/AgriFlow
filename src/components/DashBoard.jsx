@@ -9,22 +9,26 @@ const DashBoard_Page = ({ weatherData }) => {
   const [weatherChartData, setWeatherChartData] = useState([]);
   const [moistureData, setMoistureData] = useState([]);
   const [rainfallData, setRainfallData] = useState([]);
-  
+
   useEffect(() => {
     if (weatherData && weatherData.current) {
+      // Fetch Weather Data
       setWeatherChartData([
-        { label: "Temperature", value: weatherData.current.temp_c },
-        { label: "Humidity", value: weatherData.current.humidity },
-        { label: "Wind Speed", value: weatherData.current.wind_kph },
+        { label: "Temperature (°C)", value: weatherData.current.temp_c },
+        { label: "Humidity (%)", value: weatherData.current.humidity },
+        { label: "Wind Speed (km/h)", value: weatherData.current.wind_kph },
       ]);
 
+      // Add Hardcoded Soil & Moisture Data
       setMoistureData([
-        { label: "Soil Moisture", value: 40 }, // Replace with actual data
+        { label: "Soil Moisture (%)", value: 40 }, // Example Value
         { label: "Soil pH", value: 6.5 },
+        { label: "Nitrogen Level", value: "High" }, // Example
       ]);
 
       setRainfallData([
-        { label: "Rainfall", value: 30 }, // Replace with real data
+        { label: "Rainfall (mm)", value: 30 }, // Example Value
+        { label: "Rain Intensity", value: "Moderate" }, // Additional Data
       ]);
     }
   }, [weatherData]); // Runs whenever `weatherData` updates
@@ -36,22 +40,38 @@ const DashBoard_Page = ({ weatherData }) => {
   return (
     <>
       <div className="p-6">
-        <h1 className="text-4xl font-bold text-green-700 mb-6">Dashboard</h1>
+        <h1 className="text-3xl font-bold text-green-700 mb-4">🌍 Weather Dashboard</h1>
 
-        {/* Weather Info */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-          <div className="bg-green-400 text-white p-6 rounded-2xl shadow-lg border border-gray-300">
-            <h2 className="text-xl font-bold mb-2">Weather</h2>
-            <div className="text-3xl font-bold">{weatherData.current.temp_c}°C</div>
-            <div className="flex mt-4">
-              <div className="bg-green-500 p-2 rounded-lg flex-1 mr-2 text-center">
-                Humidity: {weatherData.current.humidity}%
-              </div>
-              <div className="bg-green-500 p-2 rounded-lg flex-1 text-center">
-                Wind Speed: {weatherData.current.wind_kph} km/h
-              </div>
+        {/* Weather Data */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {weatherChartData.map((item, index) => (
+            <div key={index} className="bg-blue-400 text-white p-4 rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold">{item.label}</h3>
+              <p className="text-xl">{item.value}</p>
             </div>
-          </div>
+          ))}
+        </div>
+
+        {/* Soil & Moisture Data */}
+        <h2 className="text-2xl font-bold text-green-700 mt-6">🌱 Soil & Moisture Data</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {moistureData.map((item, index) => (
+            <div key={index} className="bg-green-400 text-white p-4 rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold">{item.label}</h3>
+              <p className="text-xl">{item.value}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Rainfall Data */}
+        <h2 className="text-2xl font-bold text-green-700 mt-6">🌧️ Rainfall Data</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {rainfallData.map((item, index) => (
+            <div key={index} className="bg-gray-500 text-white p-4 rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold">{item.label}</h3>
+              <p className="text-xl">{item.value}</p>
+            </div>
+          ))}
         </div>
       </div>
 

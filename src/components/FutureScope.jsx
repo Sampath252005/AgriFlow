@@ -5,8 +5,8 @@ const FutureScope = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="p-8 bg-gradient-to-r from-blue-100 to-green-200 min-h-screen">
-      <h2 className="text-3xl font-bold text-green-800 mb-6 text-center">
+    <div className="p-8 bg-gradient-to-r from-blue-100 to-green-200 min-h-screen pt-10 ">
+      <h2 className="text-3xl font-bold text-green-800 mb-6 text-center pb-15">
         🌍 Future Scope of Smart Farming 🚀
       </h2>
 
