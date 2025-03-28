@@ -22,25 +22,25 @@ const Menu = ({ show, onClose }) => {
 
         {/* Navigation Links */}
         <div className="flex flex-col space-y-10 font-bold mt-5">
-          <Link to="/Home" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
+          <Link to="/Home" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600" onClick={onClose}>
             Home
           </Link>
-          <Link to="/dashboard" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
+          <Link to="/dashboard" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600" onClick={onClose}>
             Dashboard
           </Link>
-          <Link to="/Weather" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
+          <Link to="/Weather" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600"  onClick={onClose}>
             Weather
           </Link>
-          <Link to="/PlantPredictor" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
+          <Link to="/PlantPredictor" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600"  onClick={onClose}>
           PlantPredictor
           </Link>
           {/* <Link to="/irrigation-planner" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
             Irrigation Planner
           </Link> */}
-          <Link to="/report" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
+          <Link to="/report" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600"  onClick={onClose}>
             Report
           </Link>
-          <Link to="/FutureScope" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
+          <Link to="/FutureScope" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600"  onClick={onClose}>
             Future Scope
           </Link>
         </div>
