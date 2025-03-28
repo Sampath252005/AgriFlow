@@ -45,11 +45,11 @@ const ProfilePage = ({ showProfile, onCloseProfile }) => {
         ></div>
       )}
       <div
-        className={`fixed top-0 right-0 w-64 md:w-130 h-full bg-gray-800 shadow-lg text-white p-10 z-50 transform ${
+        className={`fixed top-0 right-0 w-64 md:w-130 h-full bg-green-200 shadow-lg text-black p-10 z-50 transform ${
           showProfile ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300`}
       >
-        <div className="flex-col space-y-10 justify-between items-center">
+        <div className="flex-col space-y-10 justify-between items-center bg-green-100 p-10 rounded-3xl">
           <div className="flex justify-center align-middle">
             <img src={malelogo} alt="user photo" className="size-40" />
           </div>
@@ -62,7 +62,7 @@ const ProfilePage = ({ showProfile, onCloseProfile }) => {
               name="fullName"
               value={profile.fullName}
               onChange={handleChange}
-              className="w-full min-h-[40px] font-bold text-white p-2 rounded-md"
+              className="w-full min-h-[40px] font-bold text-black p-2 rounded-md"
               placeholder="Enter your name"
             />
           </div>
@@ -75,7 +75,7 @@ const ProfilePage = ({ showProfile, onCloseProfile }) => {
               name="email"
               value={profile.email}
               onChange={handleChange}
-              className="w-full min-h-[40px] font-bold text-white p-2 rounded-md"
+              className="w-full min-h-[40px] font-bold text-black p-2 rounded-md"
               placeholder="Enter your email"
             />
           </div>
@@ -88,7 +88,7 @@ const ProfilePage = ({ showProfile, onCloseProfile }) => {
               name="phone"
               value={profile.phone}
               onChange={handleChange}
-              className="w-full min-h-[40px] font-bold text-white p-2 rounded-md"
+              className="w-full min-h-[40px] font-bold text-black p-2 rounded-md"
               placeholder="Enter your phone number"
             />
           </div>
@@ -96,13 +96,13 @@ const ProfilePage = ({ showProfile, onCloseProfile }) => {
           {/* Buttons */}
           <div className="flex justify-between mt-6">
             <button
-              className="bg-green-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-400"
+              className="bg-green-500 text-black px-4 py-2 rounded-lg shadow-md hover:bg-green-400"
               onClick={handleSave}
             >
               Save
             </button>
             <button
-              className="bg-red-700 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-500"
+              className="bg-red-700 text-black px-4 py-2 rounded-lg shadow-md hover:bg-red-500"
               onClick={handleLogout}
             >
               Log Out
