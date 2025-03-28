@@ -9,7 +9,7 @@ ChartJS.register(LineElement, BarElement, PointElement, CategoryScale, LinearSca
 const API_KEY = "7482feb76e9cbff85e84e9f7f98ba6ce"; // Replace with your API Key
 
 function WeatherdashBoard() {
-  const [city, setCity] = useState("India");
+  const [city, setCity] = useState("australia");
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
