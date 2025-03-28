@@ -13,7 +13,6 @@ function PlantPredictor() {
   const [loadingPlant, setLoadingPlant] = useState(false);
   const [loadingLocation, setLoadingLocation] = useState(false);
 
-  // Fetch irrigation details based on soil & plant type
   const fetchIrrigationDetails = async () => {
     if (!soilType || !plantType) {
       alert("Please enter both soil type and plant type.");
@@ -24,7 +23,7 @@ function PlantPredictor() {
     try {
       const ai = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
       const response = await ai.generateContent(
-        `On the basis of ${plantType} in ${soilType} soil, give me 4-5 lines of details about water-required. If the soil type or plant type does not exist, return an error message.`
+        ` tell me On the basis of ${plantType} in ${soilType} soil, If the soil type and plant type  exist and are valid plantname and soil type then give me 4-5 lines of details about water-required. If the soil type or plant type does not exist, return an error message.`
       );
       const text = await response.response.text();
       setResult(text);
@@ -35,7 +34,6 @@ function PlantPredictor() {
     setLoadingPlant(false);
   };
 
-  // Fetch location details based on state & region name
   const fetchLocationDetails = async () => {
     if (!stateName || !regionName) {
       alert("Please enter both state name and region name.");
@@ -46,7 +44,7 @@ function PlantPredictor() {
     try {
       const ai = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
       const response = await ai.generateContent(
-        `If the region ${regionName} exists in ${stateName}, give me the top 5 crops that can be grown there (line by line). If not, return 'Invalid inputs'.`
+        `If the region ${regionName} exists in ${stateName}, give me the top 5 crops that can be grown there (line by line). If the ${regionName} dose not in ${stateName} then tell that it dose not exist'.`
       );
       const text = await response.response.text();
       setLocationResult(text);
@@ -58,12 +56,12 @@ function PlantPredictor() {
   };
 
   return (
-    <div className="flex flex-col items-center pt-20  min-h-screen bg-green-600 text-white ">
-      <h1 className="text-3xl font-bold mb-6">🌱 Irrigation AI Assistant</h1>
+    <div className="flex flex-col items-center py-10 px-4 min-h-screen bg-green-600 text-white">
+      <h1 className="text-3xl font-bold mb-6 text-center md:mb-20">🌱 Irrigation AI Assistant</h1>
 
-      <div className="flex flex-col md:flex-row gap-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl">
         {/* Soil & Plant Section */}
-        <div className=" bg-green-700 p-6 rounded-lg shadow-lg w-full max-w-md min-h-[400px] mt-[20px] mr-[100px]">
+        <div className="bg-green-700 p-6 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-2xl font-bold mb-4">Soil & Plant Info</h2>
           <label className="block mb-2 font-semibold">Soil Type:</label>
           <input
@@ -83,7 +81,7 @@ function PlantPredictor() {
 
           <button
             onClick={fetchIrrigationDetails}
-            className=" w-full bg-green-600 hover:bg-green-800 text-white font-bold py-2 rounded-lg mt-[100px]"
+            className="w-full bg-green-600 hover:bg-green-800 text-white font-bold py-2 rounded-lg mt-6"
             disabled={loadingPlant}
           >
             {loadingPlant ? "Fetching..." : "Get Irrigation Schedule"}
@@ -98,7 +96,7 @@ function PlantPredictor() {
         </div>
 
         {/* State & Region Section */}
-        <div className="bg-green-700 p-6 rounded-lg shadow-lg w-full max-w-md mt-[20px] ml-[100px]">
+        <div className="bg-green-700 p-6 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-2xl font-bold mb-4">State & Region Info</h2>
           <label className="block mb-2 font-semibold">State Name:</label>
           <input
@@ -118,7 +116,7 @@ function PlantPredictor() {
 
           <button
             onClick={fetchLocationDetails}
-            className="w-full bg-green-600 hover:bg-green-800 text-white font-bold py-2 rounded-lg mt-[100px]"
+            className="w-full bg-green-600 hover:bg-green-800 text-white font-bold py-2 rounded-lg mt-6"
             disabled={loadingLocation}
           >
             {loadingLocation ? "Fetching..." : "Get Region Details"}

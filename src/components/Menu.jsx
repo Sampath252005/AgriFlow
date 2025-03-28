@@ -40,6 +40,9 @@ const Menu = ({ show, onClose }) => {
           <Link to="/report" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
             Report
           </Link>
+          <Link to="/FutureScope" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
+            Future Scope
+          </Link>
         </div>
       </div>
      

@@ -10,6 +10,7 @@ import SignUp from "./components/SignUp"
 import LoginPage from "./components/LoginPage"
 import WeatherPage from "./components/WeatherPage"
 import PlantPredictor from "./components/PlantPredictor";
+import FutureScope from "./components/FutureScope";
 
 
 const API_KEY = "4cefbccbd0be41f297f41318251402";
@@ -59,6 +60,7 @@ function App() {
           <Route path="/irrigation-planner" element={<IrrigationPlanner />} />
           <Route path="/PlantPredictor" element={<PlantPredictor/>}/>
           <Route path="/report" element={<ReportPage />} />
+          <Route path="/FutureScope" element={<FutureScope/>}/>
         </Routes>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import loginimage from "../images/loginpageImage.jpg";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -46,8 +47,11 @@ const SignUp = () => {
   };
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen transition-colors duration-300">
-      <div className="w-full max-w-md bg-white dark:bg-gray-800 dark:text-white p-8 rounded-lg shadow-lg">
+    <div
+          className="flex items-center justify-center bg-gray-400 min-h-screen w-full absolute inset-0 bg-cover bg-center  px-4"
+          style={{ backgroundImage:`url(${loginimage})` }}
+        >
+       <div className="w-full max-w-md bg-transparent p-6 rounded-lg shadow-lg z-50 backdrop-opacity-100 border-amber-100 border-1 ">
         <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
         <form onSubmit={handleSignUp}>
           <div className="mb-4">
@@ -56,7 +60,7 @@ const SignUp = () => {
               type="text"
               name="name"
               placeholder="Enter your name"
-              className="mt-1 w-full p-2 rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 w-full p-2 rounded-lg text-black bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
               onChange={handleChange}
             />
@@ -68,7 +72,7 @@ const SignUp = () => {
               type="email"
               name="email"
               placeholder="Enter your email"
-              className="mt-1 w-full p-2 rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 w-full p-2 rounded-lg text-black bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
               onChange={handleChange}
             />
@@ -80,7 +84,7 @@ const SignUp = () => {
               type="password"
               name="password"
               placeholder="Enter your password"
-              className="mt-1 w-full p-2 rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 w-full p-2 rounded-lg text-black bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
               onChange={handleChange}
             />
@@ -92,7 +96,7 @@ const SignUp = () => {
               type="password"
               name="confirmPassword"
               placeholder="Confirm your password"
-              className="mt-1 w-full p-2 rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-1 w-full p-2 rounded-lg text-black bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
               onChange={handleChange}
             />
@@ -106,7 +110,7 @@ const SignUp = () => {
           </button>
         </form>
 
-        <p className="mt-4 text-center text-sm">
+        <p className="mt-4 text-center text-sm font-bold">
           Already have an account?
           <span
             className="text-blue-500 hover:underline cursor-pointer"

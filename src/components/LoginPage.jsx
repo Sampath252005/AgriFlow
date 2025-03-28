@@ -43,10 +43,10 @@ const LoginPage = () => {
   
   return (
     <div
-      className="flex items-center justify-center bg-gray-400 min-h-screen w-full absolute inset-0 bg-cover bg-center px-4"
+      className="flex items-center justify-center bg-gray-400 min-h-screen w-full absolute inset-0 bg-cover bg-center  px-4"
       style={{ backgroundImage:`url(${loginimage})` }}
     >
-      <div className="w-full max-w-md bg-transparent p-6 rounded-lg shadow-lg z-50">
+      <div className="w-full max-w-md bg-transparent p-6 rounded-lg shadow-lg z-50 backdrop-opacity-100 border-amber-100 border-1 ">
         <h2 className="text-4xl text-center text-gray-700 mb-6 font-extrabold">
           Login
         </h2>
@@ -81,13 +81,13 @@ const LoginPage = () => {
 
           <button
             type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition duration-300"
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition duration-300 cursor-pointer"
           >
             Login
           </button>
         </form>
 
-        <p className="mt-4 text-center text-gray-700 text-sm">
+        <p className="mt-4 text-center text-gray-700 text-sm font-bold">
           Don't have an account?{" "}
           <button
             className="text-blue-500 hover:underline font-bold cursor-pointer"
