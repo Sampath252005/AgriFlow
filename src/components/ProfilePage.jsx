@@ -1,7 +1,9 @@
 import React from "react";
 import malelogo from "../images/male_profile.png";
+import { useNavigate } from "react-router-dom";
 
 const ProfilePage = ({ showProfile, onCloseProfile }) => {
+   const navigate = useNavigate();
   return (
     <>
       {showProfile && (
@@ -35,7 +37,7 @@ const ProfilePage = ({ showProfile, onCloseProfile }) => {
               <div className="w-full min-h-[50px] font-bold"></div>
             </div>
           </div>
-          <button className="absolute bottom-4 right-4 bg-red-700 cursor-pointer text-white px-4 py-2 cur rounded-lg shadow-md hover:bg-red-500">
+          <button className="absolute bottom-4 right-4 bg-red-700 cursor-pointer text-white px-4 py-2 cur rounded-lg shadow-md hover:bg-red-500" onClick={() => navigate("/")}>
             Log Out
           </button>
         </div>

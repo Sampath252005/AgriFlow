@@ -4,10 +4,10 @@ import SoilCare from './SoilCare'
 
 const FutureScope = () => {
   return (
-    <>
+    <div className='fle'>
        <WaterUsage/>
        <SoilCare/>
-    </>
+    </div>
   )
 }
 

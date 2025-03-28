@@ -91,7 +91,7 @@ const LoginPage = () => {
           Don't have an account?{" "}
           <button
             className="text-blue-500 hover:underline font-bold cursor-pointer"
-            onClick={() => navigate("/SignUp")}
+            onClick={() => navigate("/")}
           >
             Sign Up
           </button>
