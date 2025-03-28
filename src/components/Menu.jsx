@@ -34,9 +34,9 @@ const Menu = ({ show, onClose }) => {
           <Link to="/PlantPredictor" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
           PlantPredictor
           </Link>
-          <Link to="/irrigation-planner" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
+          {/* <Link to="/irrigation-planner" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
             Irrigation Planner
-          </Link>
+          </Link> */}
           <Link to="/report" className="bg-gray-700 rounded-2xl p-2 hover:bg-gray-600">
             Report
           </Link>

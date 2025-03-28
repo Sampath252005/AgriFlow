@@ -1,12 +1,13 @@
 import React from 'react'
 import WaterUsage from './WaterUsage'
+import SoilCare from './SoilCare'
 
 const FutureScope = () => {
   return (
-    <div>
-        <WaterUsage/>
-        <FutureScope/>
-    </div>
+    <>
+       <WaterUsage/>
+       <SoilCare/>
+    </>
   )
 }
 

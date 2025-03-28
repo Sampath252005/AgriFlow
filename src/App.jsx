@@ -57,7 +57,7 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/dashboard" element={<DashboardPage city={city} weatherData={weatherData} />} />
           <Route path="/Weather"  element={<WeatherPage setCity={setCity} weatherData={weatherData} loading={loading} />} />
-          <Route path="/irrigation-planner" element={<IrrigationPlanner />} />
+          {/* <Route path="/irrigation-planner" element={<IrrigationPlanner />} /> */}
           <Route path="/PlantPredictor" element={<PlantPredictor/>}/>
           <Route path="/report" element={<ReportPage />} />
           <Route path="/FutureScope" element={<FutureScope/>}/>
