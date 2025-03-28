@@ -22,32 +22,17 @@ const ProfilePage = ({ showProfile, onCloseProfile }) => {
           <div className="flex-col justify-center items-center space-y-[50px]">
             <div>
               <label className="block text-2xl font-extrabold">Full Name</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter your full name"
-                className="input-class w-full min-h-[50px] font-bold"
-              />
+              <div className="w-full min-h-[50px] font-bold"></div>
             </div>
             <div>
               <label className="block text-2xl font-extrabold">
                 Phone Number
               </label>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Enter your contact number"
-                className="input-class w-full min-h-[50px] font-bold"
-              />
+              <div className="w-full min-h-[50px] font-bold"></div>
             </div>
             <div>
               <label className="block text-2xl font-extrabold">Location</label>
-              <input
-                type="text"
-                name="location"
-                placeholder="Enter your village/district"
-                className="input-class w-full min-h-[50px] font-bold"
-              />
+              <div className="w-full min-h-[50px] font-bold"></div>
             </div>
           </div>
           <button className="absolute bottom-4 right-4 bg-red-700 cursor-pointer text-white px-4 py-2 cur rounded-lg shadow-md hover:bg-red-500">

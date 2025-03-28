@@ -2,7 +2,7 @@ import { useState ,useEffect} from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Routes, Route ,useLocation} from "react-router-dom";
 import Home from "./components/Home";
-import DashboardPage from "./components/dashBoard_Page";
+import DashboardPage from "./components/DashBoard";
 import IrrigationPlanner from "./components/irrigationPlannerPage";
 import ReportPage from "./components/reportPage";
 import NavBar from "./components/NavBar";
@@ -54,7 +54,7 @@ function App() {
           <Route path="/" element={<LoginPage />} />
           <Route path="/SignUP" element={<SignUp />} />
           <Route path="/Home" element={<Home />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/dashboard" element={<DashboardPage city={city} weatherData={weatherData} />} />
           <Route path="/Weather"  element={<WeatherPage setCity={setCity} weatherData={weatherData} loading={loading} />} />
           <Route path="/irrigation-planner" element={<IrrigationPlanner />} />
           <Route path="/PlantPredictor" element={<PlantPredictor/>}/>

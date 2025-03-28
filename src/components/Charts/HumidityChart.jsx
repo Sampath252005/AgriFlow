@@ -5,14 +5,14 @@ import { Bar } from "react-chartjs-2";
 // Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const RainfallChart = ({ data }) => {
+const HumidityChart = ({ data }) => {
   const chartData = {
     labels: data.map(d => d.date),
     datasets: [
       {
-        label: "Total Rainfall (mm)",
-        data: data.map(d => d.rainfall),
-        backgroundColor: "rgba(153, 102, 255, 0.6)"
+        label: "Avg Humidity (%)",
+        data: data.map(d => d.humidity),
+        backgroundColor: "rgba(54, 162, 235, 0.6)"
       }
     ]
   };
@@ -20,4 +20,4 @@ const RainfallChart = ({ data }) => {
   return <Bar data={chartData} />;
 };
 
-export default RainfallChart;
+export default HumidityChart;
