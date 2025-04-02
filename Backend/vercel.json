@@ -7,18 +7,18 @@
         "config": { "distDir": "frontend/dist" }
       },
       {
-        "src": "../Backend/login.js",
+        "src": "backend/login.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "../Backend/login.js"
+        "dest": "backend/login.js"
       },
       {
         "src": "/(.*)",
-        "dest": "../frontend/dist/index.html"
+        "dest": "frontend/dist/index.html"
       }
     ]
   }
