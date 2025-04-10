@@ -12,7 +12,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 // ✅ Correct CORS Setup for Vercel + Localhost
 app.use(cors({
-  origin: ["http://localhost:5173", "https://agriflow-frontend.vercel.app"],
+  origin: ["http://localhost:5173", "https://agri-flow-frontend-rho.vercel.app"],
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 }));
