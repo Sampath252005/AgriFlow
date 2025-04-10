@@ -40,7 +40,7 @@ const DashBoard_Page = ({ weatherData }) => {
   return (
     <>
       <div className="p-6">
-        <h1 className="text-3xl font-bold text-green-700 mb-4">🌍 Weather Dashboard</h1>
+        <h1 className="text-3xl  font-bold text-green-700 mb-4">🌍 Weather Dashboard</h1>
 
         {/* Weather Data */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -64,7 +64,7 @@ const DashBoard_Page = ({ weatherData }) => {
         </div>
 
         {/* Rainfall Data */}
-        <h2 className="text-2xl font-bold text-green-700 mt-6">🌧️ Rainfall Data</h2>
+        <h2 className="text-2xl  font-bold text-green-700 mt-6">🌧️ Rainfall Data</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {rainfallData.map((item, index) => (
             <div key={index} className="bg-gray-500 text-white p-4 rounded-lg shadow-md">

@@ -10,15 +10,16 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 const JWT_SECRET = process.env.JWT_SECRET;
 
+app.use(cors({
+  origin: ["http://localhost:5173", "https://agriflow-frontend.vercel.app"],  // Add the correct frontend URL here
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+}));
+
 // Middleware
 app.use(express.json());
 // app.use(cors());
-app.use(cors({
-    origin: "http://localhost:5173",  // Add the correct frontend URL here
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"]
-  }));
-  
+
 
 // Connect to MongoDB
 mongoose.connect(MONGO_URI)

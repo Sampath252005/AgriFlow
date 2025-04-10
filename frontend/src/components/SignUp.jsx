@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import loginimage from "../images/loginpageImage.jpg";
-
+const API_URL = import.meta.env.VITE_API_URL;
 const SignUp = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ const SignUp = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/register", {
+      const response = await fetch(`${API_URL}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
