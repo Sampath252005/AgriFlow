@@ -16,6 +16,7 @@ app.use(cors({
   allowedHeaders: ["Content-Type"],
 }));
 
+app.options('*', cors());
 // Middleware
 app.use(express.json());
 // app.use(cors());
