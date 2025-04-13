@@ -45,7 +45,7 @@ function SearchBar({ setCity, weatherData }) {
         <input
           type="text"
           placeholder="Search for cities"
-          className="flex-1 text-black font-bold bg-green-200 rounded-2xl text-center p-2 min-w-[100px] max-w-full md:max-w-2xl md:h-13"
+          className="flex-1 text-black font-bold bg-blue-300 rounded-2xl text-center p-2 min-w-[100px] max-w-full md:max-w-2xl md:h-13"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleSearch}
@@ -53,7 +53,7 @@ function SearchBar({ setCity, weatherData }) {
       </div>
 
       {/* Current Weather */}
-      <div className="flex flex-col md:flex-row justify-between items-center p-5 bg-gradient-to-r from-green-900 via-green-700 to-green-500 rounded-xl shadow-lg ">
+      <div className="flex flex-col md:flex-row justify-between items-center p-5 bg-gradient-to-r from-blue-900 via-blue-700 to-sky-400 rounded-xl shadow-md shadow-blue-800/30 ">
         <div className="flex flex-col gap-4 font-bold">
           <h1 className="text-4xl font-bold text-white">{location.name}</h1>
           <p className="text-gray-200 font-extrabold">{current.condition.text}</p>
@@ -62,12 +62,12 @@ function SearchBar({ setCity, weatherData }) {
         <img
           src={iconChange(current.condition.text, current.is_day)}
           alt="weather icon"
-          className="w-32 h-32 md:w-40 md:h-40 bg-green-400 rounded-4xl"
+          className="w-32 h-32 md:w-40 md:h-40 bg-blue-900 rounded-4xl"
         />
       </div>
 
       {/* Today's Forecast */}
-      <div className="bg-gradient-to-r from-green-800 via-green-600 to-green-400 p-4 rounded-xl shadow-lg font-bold">
+      <div className="bg-blue-400 rounded-lg shadow-md shadow-blue-700/30 p-5">
         <h2 className="text-white font-extrabold mb-4">TODAY'S FORECAST</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {forecast.forecastday[0].hour
@@ -75,7 +75,7 @@ function SearchBar({ setCity, weatherData }) {
             .map((hour, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-2 p-2 bg-green-500 rounded-lg shadow-md"
+                className="flex flex-col items-center gap-2 p-2 bg-blue-900 rounded-lg shadow-md"
               >
                 <span className="text-xl text-gray-300">{hour.time.slice(11)}</span>
                 <img src={iconChange(hour.condition.text, 1)} alt="hourly icon" className="w-10 h-10" />
@@ -86,7 +86,7 @@ function SearchBar({ setCity, weatherData }) {
       </div>
 
       {/* Air Conditions */}
-      <div className="bg-gradient-to-r from-green-800 via-green-600 to-green-400 p-4 rounded-xl shadow-lg">
+      <div className="bg-blue-400 rounded-lg shadow-md shadow-blue-700/30 p-5">
         <h2 className="text-white font-extrabold mb-4">AIR CONDITIONS</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 font-bold">
           {[
@@ -95,7 +95,7 @@ function SearchBar({ setCity, weatherData }) {
             { label: "Humidity", value: `${current.humidity}%`, icon: humidityIcon },
             { label: "UV Index", value: current.uv, icon: uvindex },
           ].map((item, index) => (
-            <div key={index} className="flex items-center gap-2 p-2 bg-green-500 rounded-lg shadow-md">
+            <div key={index} className="flex items-center gap-2 p-2 bg-blue-900 rounded-lg shadow-md">
               <img src={item.icon} alt={`${item.label} icon`} className="w-6 h-6" />
               <span className="text-white">{item.label}: {item.value}</span>
             </div>

@@ -5,15 +5,15 @@ function WeatherForecast({ weatherData }) {
   if (!weatherData || !weatherData.forecast) {
     return <p className="text-white">Loading 3-day forecast...</p>;
   }
-
+//bg-gradient-to-r from-green-900 via-green-700 to-green-500 rounded-xl p-6 shadow-xl m-5 font-bold
   return (
-    <div className="bg-gradient-to-r from-green-900 via-green-700 to-green-500 rounded-xl p-6 shadow-xl m-5 font-bold">
+    <div className="bg-blue-400 rounded-lg shadow-md shadow-blue-700/30 p-5">
       <h2 className="text-white text-2xl font-extrabold mb-4">3-DAY FORECAST</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {weatherData.forecast.forecastday.map((day, index) => (
           <div
             key={index}
-            className="flex flex-col items-center p-4 bg-white/10 backdrop-blur-md rounded-lg shadow-lg transition hover:scale-105 "
+            className="flex flex-col items-center  bg-blue-900  backdrop-blur-md rounded-lg shadow-lg transition hover:scale-105 p-5 "
           >
             <span className="text-white text-lg font-semibold">
               {new Date(day.date).toLocaleDateString("en-US", { weekday: "long" })}

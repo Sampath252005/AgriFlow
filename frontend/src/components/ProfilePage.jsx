@@ -38,16 +38,16 @@ const ProfilePage = ({ showProfile, onCloseProfile }) => {
     <>
       {showProfile && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="fixed inset-0 bg-transparent bg-opacity-50 z-40"
           onClick={onCloseProfile}
         ></div>
       )}
       <div
-        className={`fixed top-0 right-0 w-full max-w-sm md:max-w-lg lg:max-w-md h-full bg-green-200 shadow-lg text-black z-50 transform ${
+        className={`fixed top-0 right-0 w-full max-w-sm md:max-w-lg lg:max-w-md h-full bg-green-300 shadow-lg text-black z-50 transform ${
           showProfile ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 overflow-y-auto`}
       >
-        <div className="flex flex-col gap-6 items-center bg-green-100 p-6 md:p-10 rounded-none md:rounded-3xl min-h-full">
+        <div className="flex flex-col gap-6 items-center bg-green-300 p-6 md:p-10 rounded-none md:rounded-3xl min-h-full">
           {/* Profile Image */}
           <div className="flex justify-center w-full">
             <img src={malelogo} alt="user" className="w-32 h-32 rounded-full" />
@@ -93,7 +93,7 @@ const ProfilePage = ({ showProfile, onCloseProfile }) => {
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-col md:flex-row gap-4 w-full justify-center mt-4">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-7 w-full justify-center mt-4">
             <button
               className="bg-green-500 text-black px-4 py-2 rounded-lg shadow-md hover:bg-green-400 w-full md:w-auto"
               onClick={handleSave}
@@ -105,6 +105,12 @@ const ProfilePage = ({ showProfile, onCloseProfile }) => {
               onClick={handleLogout}
             >
               Log Out
+            </button>
+            <button
+              className="bg-blue-700 text-black px-4 py-2 rounded-lg shadow-md hover:bg-blue-500 w-full md:w-auto font-bold"
+              onClick={()=>onCloseProfile(true)}
+            >
+              back
             </button>
           </div>
         </div>
